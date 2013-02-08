@@ -1,0 +1,11 @@
+*.zip
+*.gz
+*.css
+
+pids
+logs
+results
+lib-cov
+
+npm-debug.log
+node_modules
