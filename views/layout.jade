@@ -7,6 +7,13 @@ html
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/responsive.css')
 	body
+		//if lt IE 7
+			p.chromeframe.
+				You are using an outdated browser.
+				Please <a href="http://browsehappy.com/">upgrade your browser</a> or
+				<a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
+				to improve your experience.
+
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')
 		script window.jQuery || document.write('<script src="/scripts/jquery.min.js"><\\/script>')
