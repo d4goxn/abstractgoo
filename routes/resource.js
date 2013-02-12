@@ -20,7 +20,7 @@ exports.resource = function(request, response){
 	// get the resource's meta info
 	var meta;
 	try {
-		meta = JSON.parse(fs.readFileSync(resourceName + '.json'));
+		meta = JSON.parse(fs.readFileSync('resources/' + resourceName + '.json'));
 	} catch(error) {
 		console.log(error);
 		response.send(404);
