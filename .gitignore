@@ -9,3 +9,9 @@ lib-cov
 
 npm-debug.log
 node_modules
+
+content/*
+!content/index.md
+
+resources/*
+!resources/index.json

@@ -1,5 +1,17 @@
 extends layout
+include sidebar
+
 
 block content
-  h1= title
-  p Welcome to #{title}
+	.container-fluid
+		.row-fluid
+			hasSidebar = ((page.sidebar && page.sidebar.length) || (site.sidebar && site.sidebar.length))? true: false
+			section(role = 'main', class = (hasSidebar? 'span8': 'span12'))!= page.content
+			if hasSidebar
+				aside.span4
+					if page.sidebar
+						each component in page.sidebar
+							mixin sidebarItem(component)
+					if site.sidebar
+						each component in site.sidebar
+							mixin sidebarItem(component)

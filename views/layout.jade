@@ -1,20 +1,18 @@
 doctype 5
 html
 	head
-		title= title
+		title= (page.title? page.title + ' - ': '') + site.title
 		link(rel='stylesheet', href='/styles/style.css')
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/responsive.css')
 	body
-		//if lt IE 7
+		//if lt IE 9
 			p.chromeframe.
-				You are using an outdated browser.
-				Please <a href="http://browsehappy.com/">upgrade your browser</a> or
-				<a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
-				to improve your experience.
+				You are using a defective browser.
+				Please <a href="http://browsehappy.com/">use any other browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to browse the modern internet.
 
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')
 		script window.jQuery || document.write('<script src="/scripts/jquery.min.js"><\\/script>')
-		script(src='/scripts/bootstrap/scripts/bootstrap-carousel.js')
+		script(src='/bootstrap/scripts/bootstrap-carousel.js')
