@@ -2,14 +2,35 @@ body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
 }
 
+.container-fluid {
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 h1, h2, h3, h4 {
 	font-size: inherit;
 	line-height: inherit;
 }
 
-nav h1 {
-	margin: inherit;
-	display: inline-block;
+#site-nav {
+	h1 {
+		margin: inherit;
+		display: inline-block;
+	}
+
+	a, a:link, a:hover, a:active, a:visited {
+		padding-top: 0.25em;
+	}
+
+	a:first-child {
+		padding-left: 1em;
+	}
+
+	a:not(:first-child) {
+		text-align: right;
+		padding-right: 1em;
+	}
 }
 
 em {
@@ -23,6 +44,7 @@ strong {
 
 ul {
 	list-style-type: none;
+	margin-left: 0;
 
 	li {
 		margin-bottom: .5em;

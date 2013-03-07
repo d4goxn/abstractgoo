@@ -6,6 +6,7 @@ html
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/responsive.css')
 		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800')
+		link(rel='stylesheet', href='/styles/structure.css')
 		link(rel='stylesheet', href='/styles/style.css')
 	body
 		//if lt IE 9
@@ -20,7 +21,7 @@ html
 					a(href='/service', class='span2 #{page.path == "/service"? "active": ""}') what I do
 					a(href='/policy', class='span2 #{page.path == "/policy"? "active": ""}') how I roll
 					a(href='/blog', class='span2 #{page.path == "/blog"? "active": ""}') what's up
-					a(href='/about', class='span2 #{page.path == "/about"? "active": ""}') who am I
+					a(href='/about', class='span2 #{page.path == "/about"? "active": ""}') who I am
 
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')

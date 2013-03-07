@@ -1,5 +1,70 @@
-@import "../bootstrap/styles/mixins.less";
+//@import "bootstrap/styles/mixins.less";
+#gradient {
+	.vertical(@startColor: #555, @endColor: #333) {
+		background-color: mix(@startColor, @endColor, 60%);
+		background-image: -moz-linear-gradient(top, @startColor, @endColor); // FF 3.6+
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
+		background-image: -webkit-linear-gradient(top, @startColor, @endColor); // Safari 5.1+, Chrome 10+
+		background-image: -o-linear-gradient(top, @startColor, @endColor); // Opera 11.10
+		background-image: linear-gradient(to bottom, @startColor, @endColor); // Standard, IE10
+		background-repeat: repeat-x;
+		filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@startColor),argb(@endColor))); // IE9 and down
+	}
+}
+
+a, a:link, a:hover, a:active, a:visited {
+	color: inherit;
+}
+
+#site-nav {
+	#gradient > .vertical(#fff, #aaa);
+
+	a, a:link, a:hover, a:active, a:visited {
+		text-decoration: none;
+		text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+	}
+
+	// shoutout to colorschemedesigner.com
+	a:hover:first-child, a.active:first-child {
+		@color: #444;
+		color: #fff;
+		text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.5);
+		#gradient > .vertical(lighten(@color, 20%), @color);
+	}
+
+	a:hover:nth-child(4n - 3):not(:first-child), a.active:nth-child(4n - 3):not(:first-child) {
+		@color: #f95f43;
+		#gradient > .vertical(lighten(@color, 25%), @color);
+	}
+
+	a:hover:nth-child(4n - 2), a.active:nth-child(4n - 2) {
+		@color: #f9a043;
+		#gradient > .vertical(lighten(@color, 20%), @color);
+	}
+
+	a:hover:nth-child(4n - 1), a.active:nth-child(4n - 1) {
+		@color: #2e809c;
+		#gradient > .vertical(lighten(@color, 30%), @color);
+	}
+
+	a:hover:nth-child(4n), a.active:nth-child(4n) {
+		@color: #31b65e;
+		#gradient > .vertical(lighten(@color, 30%), @color);
+	}
+}
+
+#site-header {
+	background-color: #111;
+
+	#splash {
+		min-height: 300px;
+	}
+}
 
 #middle {
-	background-color: #gradient > .vertical();
+	#gradient > .vertical(#ddd, #fff);
+
+	.container-fluid {
+		background: #fff
+	}
 }
