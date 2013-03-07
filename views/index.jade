@@ -1,17 +1,72 @@
 extends layout
-include sidebar
-
 
 block content
-	.container-fluid
-		.row-fluid
-			hasSidebar = ((page.sidebar && page.sidebar.length) || (site.sidebar && site.sidebar.length))? true: false
-			section(role = 'main', class = (hasSidebar? 'span8': 'span12'))!= page.content
-			if hasSidebar
-				aside.span4
-					if page.sidebar
-						each component in page.sidebar
-							mixin sidebarItem(component)
-					if site.sidebar
-						each component in site.sidebar
-							mixin sidebarItem(component)
+	header#site-header
+		.container-fluid
+			.row-fluid
+				#splash.span12.carousel.slide
+					.carousel-inner
+						.active.item
+						.item
+						.item
+					a(href='#splash', data-slide='prev').carousel-control.left &lsaquo;
+					a(href='#splash', data-slide='next').carousel-control.right &rsaquo;
+	#middle
+		.container-fluid
+			.row-fluid
+				section(role='main')#main-content.span9
+					.row-fluid
+						// posts, start an include when this gets variety
+						for post in page.posts
+							article(id = 'post-#{post.title.replace(/\s/g, '-').toLowerCase()}').span4
+								h3!= post.title
+								div(role='content')!= post.content
+				section(role='complementary')#secondary-content.span3
+					// messages
+					for message in page.messages
+						article(id = 'message-#{message.title.replace(/\s/g, '-').toLowerCase()}')
+							h3!= message.title
+							div(role='content')!= message.content
+	footer
+		.container-fluid
+			.row-fluid
+				.span4
+					h2 find me on
+					ul
+						li github 
+							a(href='//github.com/d4goxn') d4goxn
+						li stackexchange 
+							a(href='//stackexchange.com/users/178206/dan-ross?tab=accounts') Dan Ross
+						li G+ 
+							a(href='//plus.google.com/105196768292553852888') Dan Ross
+						li twitter 
+							a(href='//twitter.com/ross9885') @ross9885. 
+							| I may actually use it, someday
+						li facebook: Maybe if it paid me $10<sup>[4 to 6]</sup>. <a href='https://soundcloud.com/musicdotexe/dotexe-terminated'>Kill it with fire</a>!
+				.span4
+					h2 walk my webs
+					ul
+						li: a(href='/library') reading
+						li: a(href='/politics') politics
+						li
+							a(href='/giants') giants 
+							| whose shoulders I've hopped across
+				.span4
+					h2 peers and mentors
+					ul
+						li
+							a(href='//nanaimowebdev.com/') Mike Strendin 
+							| I can't believe he got that url, that clever lucky faq!
+						li
+							a(href='//rasmussengraphicdesign.com/') Corey Rasmussen 
+							| is freakin' hilarious, except when it comes to graphic design
+						li
+							a(href='//freshcreative.ca/') Andy Chapman 
+							| taught me the basics of <a href='google.ca/search?q=seo'>seo</a>
+						li Andrew Walker showed me the magic in javascript, on both ends of the socket, after bringing PHP back to the basics. Anything I can do, he can do with less complexity
+						li
+							a(href='//ca.linkedin.com/pub/nathan-bowman/31/955/754N') Nathan Bowman 
+							| taught me everything I know about clients, and the UX they expect from their project
+						li
+							a(href='//akdnd.com/') Will Akehurst 
+							| introduced me to the wide world of ecommerce, so I showed him <a href='openerp.com/en/'>OpenERP</a>. I think we were both overwhelmed by it's sheer size

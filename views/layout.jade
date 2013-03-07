@@ -2,15 +2,25 @@ doctype 5
 html
 	head
 		title= (page.title? page.title + ' - ': '') + site.title
-		link(rel='stylesheet', href='/styles/style.css')
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/responsive.css')
+		link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800')
+		link(rel='stylesheet', href='/styles/style.css')
 	body
 		//if lt IE 9
 			p.chromeframe.
 				You are using a defective browser.
-				Please <a href="http://browsehappy.com/">use any other browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to browse the modern internet.
+				Please <a href="http://browsehappy.com/">use any other browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">add Google Chrome Frame</a>.
+
+		nav#site-nav
+			.container-fluid
+				.row-fluid(role='navigation')
+					a(href='/', class='span4 #{page.path == "/"? "active": ""}'): h1 <em>abstract</em><strong>GOO</strong>
+					a(href='/service', class='span2 #{page.path == "/service"? "active": ""}') what I do
+					a(href='/policy', class='span2 #{page.path == "/policy"? "active": ""}') how I roll
+					a(href='/blog', class='span2 #{page.path == "/blog"? "active": ""}') what's up
+					a(href='/about', class='span2 #{page.path == "/about"? "active": ""}') who am I
 
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')
