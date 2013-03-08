@@ -1,4 +1,5 @@
-//@import "bootstrap/styles/mixins.less";
+// @import "./bootstrap/styles/mixins.less";
+// todo symlink
 #gradient {
 	.vertical(@startColor: #555, @endColor: #333) {
 		background-color: mix(@startColor, @endColor, 60%);
@@ -12,11 +13,39 @@
 	}
 }
 
-a, a:link, a:hover, a:active, a:visited {
-	color: inherit;
-	text-decoration: none;
-	border-bottom-style: dotted;
-	border-bottom-width: 1px;
+body {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	@bgcolor: #2e809c;
+
+	background-color: darken(@bgcolor, 30%);
+
+	> header {
+		background-color: #111;
+
+		#splash {
+			margin-bottom: 0; // reset bootstrap .carousel style
+		}
+	}
+
+	#middle {
+		font-size: small;
+
+		#gradient > .vertical(#ddd, #fff);
+
+		.row-fluid {
+			background: #fff
+		}
+	}
+
+	> footer {
+		color: #fff;
+		font-size: smaller;
+		#gradient > .vertical(@bgcolor, darken(@bgcolor, 30%));
+
+		h2 {
+			font-size: normal;
+		}
+	}
 }
 
 #site-nav {
@@ -56,29 +85,15 @@ a, a:link, a:hover, a:active, a:visited {
 	}
 }
 
-body > header {
-	background-color: #111;
-
-	#splash {
-		margin-bottom: 0; // reset bootstrap .carousel style
-	}
+a, a:link, a:hover, a:active, a:visited {
+	color: inherit;
+	text-decoration: none;
+	border-bottom-style: dotted;
+	border-bottom-width: 1px;
 }
 
-#middle {
-	#gradient > .vertical(#ddd, #fff);
-
-	.row-fluid {
-		background: #fff
-	}
-}
-
-body {
-	@bgcolor: #2e809c;
-
-	background-color: darken(@bgcolor, 30%);
-
-	footer {
-		color: #fff;
-		#gradient > .vertical(@bgcolor, darken(@bgcolor, 30%));
-	}
+h1, h2, h3, h4, strong {
+	line-height: inherit;
+	font-size: inherit;
+	font-weight: 600;
 }
