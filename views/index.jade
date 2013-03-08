@@ -5,10 +5,18 @@ block content
 		.container-fluid
 			.row-fluid
 				#splash.span12.carousel.slide
+					ol.carousel-indicators
+						li(data-target='#splash', data-slide-to="0").active
+						li(data-target='#splash', data-slide-to="1")
+						li(data-target='#splash', data-slide-to="2")
+						li(data-target='#splash', data-slide-to="3")
+						li(data-target='#splash', data-slide-to="4")
 					.carousel-inner
-						.active.item
-						.item
-						.item
+						.active.item: img(src='images/header/new-system-screenshot.png', title='Following a tutorial on my new comp. Wheee!')
+						.item: img(src='images/header/making-a-colorscheme.png', title='Designing a colorscheme with the help of colorschemedesigner.com.')
+						.item: img(src='images/header/local-development-workflow.png', title='Building this portfolio, on localhost in a NodeJS server, using ExpressJS. Vim is awesome, if you have time to learn it.')
+						.item: img(src='images/header/color-contrast-experiment.png', title='An experiment in color. Notice that a gradient between two colors doesn\'t produce the color between them around the color wheel; a gradient cuts a straight line across the wheel!')
+						.item: img(src='images/header/ndss.png', title='A school project about my old high school. They never knew I made it, think I should try to sell it to them?')
 	#middle
 		.container-fluid
 			.row-fluid
