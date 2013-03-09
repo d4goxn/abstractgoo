@@ -29,11 +29,14 @@ body {
 
 	#middle {
 		font-size: small;
-
 		#gradient > .vertical(#ddd, #fff);
 
+		h3 {
+			font-size: 1.15em;
+		}
+
 		.row-fluid {
-			background: #fff
+			background: #fff;
 		}
 	}
 
@@ -43,7 +46,7 @@ body {
 		#gradient > .vertical(@bgcolor, darken(@bgcolor, 30%));
 
 		h2 {
-			font-size: normal;
+			font-size: 1.2em;
 		}
 	}
 }
@@ -96,4 +99,51 @@ h1, h2, h3, h4, strong {
 	line-height: inherit;
 	font-size: inherit;
 	font-weight: 600;
+}
+
+.carousel.fade
+{
+	opacity: 1;
+
+	.item
+	{
+		-moz-transition: opacity ease-in-out .7s;
+		-o-transition: opacity ease-in-out .7s;
+		-webkit-transition: opacity ease-in-out .7s;
+		transition: opacity ease-in-out .7s;
+		left: 0 !important;
+		opacity: 0;
+		top:0;
+		position:absolute;
+		width: 100%;
+		display:block;
+		&:first-child{
+			top:auto;
+			position:relative;
+		}
+
+		&.active
+		{
+			opacity: 1;
+			-moz-transition: opacity ease-in-out .7s;
+			-o-transition: opacity ease-in-out .7s;
+			-webkit-transition: opacity ease-in-out .7s;
+			transition: opacity ease-in-out .7s;
+		}
+	}
+}
+
+#splash {
+	.carousel-caption {
+		display: none;
+		top: 0;
+		bottom: inherit;
+		font-size: small;
+
+		p {
+			padding-right: 100px;
+			opacity: .75;
+			text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.75);
+		}
+	}
 }
