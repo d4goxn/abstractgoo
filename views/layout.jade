@@ -18,13 +18,18 @@ html
 			.container-fluid
 				.row-fluid(role='navigation')
 					a(href='/', class='span4 #{page.path == "/"? "active": ""}'): h1 <em>abstract</em><strong>GOO</strong>
-					a(href='/service', class='span2 #{page.path == "/service"? "active": ""}') what I do
-					a(href='/policy', class='span2 #{page.path == "/policy"? "active": ""}') how I roll
-					a(href='/blog', class='span2 #{page.path == "/blog"? "active": ""}') what's up
-					a(href='/about', class='span2 #{page.path == "/about"? "active": ""}') who I am
+					a(href='/service', class='inactive span2 #{page.path == "/service"? "active": ""}') what I do
+					a(href='/policy', class='inactive span2 #{page.path == "/policy"? "active": ""}') how I roll
+					a(href='/blog', class='inactive span2 #{page.path == "/blog"? "active": ""}') what's up
+					a(href='/about', class='inactive span2 #{page.path == "/about"? "active": ""}') who I am
 
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')
 		script window.jQuery || document.write('<script src="/scripts/jquery.min.js"><\\/script>')
 		script(src='/bootstrap/scripts/bootstrap-carousel.js')
 		block scripts
+		script
+			$('.inactive').each(function() {
+				console.log($(this));
+				$(this).attr('title', 'does not exist');
+			});

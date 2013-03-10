@@ -11,6 +11,8 @@ block content
 						li(data-target='#splash', data-slide-to='2')
 						li(data-target='#splash', data-slide-to='3')
 						li(data-target='#splash', data-slide-to='4')
+						li(data-target='#splash', data-slide-to='5')
+						li(data-target='#splash', data-slide-to='6')
 					.carousel-inner
 						.item.active
 							img(src='images/header/new-system-screenshot.png')
@@ -27,6 +29,12 @@ block content
 						.item
 							img(src='images/header/ndss.png')
 							.carousel-caption: p A school project about my old high school. They never knew I made it, think I should try to sell it to them?
+						.item
+							img(src='images/header/picpost-gallery.png')
+							.carousel-caption: p Using <a href='http://isotope.metafizzy.co/'>Isotope</a> for an image gallery.
+						.item
+							img(src='images/header/picpost-upload.png')
+							.carousel-caption: p An upload page.
 	#middle
 		.container-fluid
 			.row-fluid
@@ -68,11 +76,11 @@ block content
 					.article-wrapper
 						h2 walk my webs
 						ul
-							li <a href='/library'><strong>reading</strong></a>
-								|  1500 bookmarks and counting. Looking for a gift? Gimme a <a href='http://www.bookdepository.com/'>bookstore</a> gift certificate. Got too many books? Give 'em to <a href='http://www.literacynanaimo.org/support-literacy/'>Literacy Nanaimo</a> to grow strong programmers and help eradicate ignorance
-							li <a href='/politics'><strong>politics</strong></a>
+							li <a href='/library' class='inactive'><strong>reading</strong></a>
+								|  1500 bookmarks and counting. Looking for a gift? Gimme a <a href='http://www.bookdepository.com/'>bookstore</a> gift certificate. Got too many books? Give 'em to <a href='http://www.literacynanaimo.org/support-literacy/'>Literacy Nanaimo</a> to grow strong young grasshoppers and help eradicate ignorance
+							li <a href='/politics' class='inactive'><strong>politics</strong></a>
 								|  practical, but basically green. Want my vote? Show me a plan with numbers that I can be proud of when I die
-							li <a href='/giants'><strong>giants</strong></a>
+							li <a href='/giants' class='inactive'><strong>giants</strong></a>
 								|  whose shoulders I've hopped across
 				.span4
 					.article-wrapper
@@ -82,14 +90,14 @@ block content
 								a(href='//nanaimowebdev.com/') <strong>Mike Strendin</strong>
 								|  I can't believe he got that url, that clever lucky faq!
 							li
-								a(href='//rasmussengraphicdesign.com/') <strong>Corey Rasmussen</strong>
+								a(href='//rasmussengraphicdesign.com/').inactive <strong>Corey Rasmussen</strong>
 								|  is freakin' hilarious, except when it comes to graphic design
 							li
 								a(href='//freshcreative.ca/') <strong>Andy Chapman</strong>
 								|  taught me the basics of <a href='google.ca/search?q=seo'>seo</a>
 							li Andrew Walker showed me the magic in javascript, on both ends of the socket, after bringing PHP back to the basics. Anything I can do, he can do with less complexity
 							li
-								a(href='//ca.linkedin.com/pub/nathan-bowman/31/955/754N') <strong>Nathan Bowman</strong>
+								a(href='//ca.linkedin.com/pub/nathan-bowman/31/955/754N').inactive <strong>Nathan Bowman</strong>
 								|  taught me everything I know about clients, and the UX they expect from their project
 							li
 								a(href='//akdnd.com/') <strong>Will Akehurst</strong>
@@ -104,9 +112,9 @@ block scripts
 	script
 		$('#splash').hover(
 			function() {
-				$('.carousel-caption').stop().slideDown('fast');
+				$('.carousel-caption').stop().fadeIn('fast');
 			},
 			function() {
-				$('.carousel-caption').stop().slideUp('fast');
+				$('.carousel-caption').stop().fadeOut('fast');
 			}
 		);
