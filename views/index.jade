@@ -44,8 +44,11 @@ block content
 						for post in page.posts
 							article(id = 'post-#{post.title.replace(/\s/g, '-').toLowerCase()}').span4
 								.article-wrapper
-									h3!= post.title
-									div(role='content')!= post.content
+									a(href='/posts/#{post.name}')
+										h3!= md(post.title)
+									.imagebar
+										img(src='#{post.image.src}', alt='#{post.image.alt}')
+									div(role='content')!= md(post.content)
 				section(role='complementary')#secondary-content.span3
 					// needed to keep top position consistent with section[role=main]
 					.row-fluid
@@ -54,7 +57,7 @@ block content
 							article(id = 'message-#{message.title.replace(/\s/g, '-').toLowerCase()}')
 								.article-wrapper
 									h3!= message.title
-									div(role='content')!= message.content
+									div(role='content')!= md(message.content)
 	footer
 		.container-fluid
 			.row-fluid
