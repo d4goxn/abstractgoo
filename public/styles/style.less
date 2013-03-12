@@ -1,5 +1,5 @@
-// @import "./bootstrap/styles/mixins.less";
-// todo symlink
+// @import "./../bootstrap/styles/mixins.less";
+
 #gradient {
 	.vertical(@startColor: #555, @endColor: #333) {
 		background-color: mix(@startColor, @endColor, 60%);
@@ -152,7 +152,33 @@ h1, h2, h3, h4, strong {
 	}
 }
 
-.imagebar {
-	background-color: #000;
-	text-align: center;
+#text-outline(@color) {
+	text-shadow:
+		-1px -1px 1px @color,
+		-1px 0px 1px @color,
+		-1px 1px 1px @color,
+		0px -1px 1px @color,
+		0px 0px 1px @color,
+		0px 1px 1px @color,
+		1px -1px 1px @color,
+		1px 0px 1px @color,
+		1px 1px 1px @color;
 }
+
+.post {
+	.title {
+		border-bottom: none;
+	}
+
+	.imageblock {
+		.title {
+			#gradient > .vertical(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+			#text-outline(#fff);
+
+			a {
+				border-bottom: none;
+			}
+		}
+	}
+}
+

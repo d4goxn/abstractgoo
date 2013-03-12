@@ -7,7 +7,6 @@ var md = require('node-markdown').Markdown;
 
 exports.index = function(req, res){
 	res.render('index', {
-		md: md,
 		site: {
 			title: 'abstractGOO'
 		},
@@ -19,9 +18,9 @@ exports.index = function(req, res){
 					title: 'picpost',
 					image: {
 						src: 'images/posts/picpost/gallery-small.png',
-						alt: 'picpost gallery page'
+						title: 'picpost gallery page'
 					},
-					content: 'An image gallery laid out using the [isotope](http://isotope.metafizzy.co/) plugin. This was an assignment for the [web dev program](http://discoverycommunitycollege.com/web-development/) at Discovery Community College.'
+					content: md('An image gallery laid out using the [isotope](http://isotope.metafizzy.co/) plugin. This was an assignment for the [web dev program](http://discoverycommunitycollege.com/web-development/) at Discovery Community College.')
 				},
 			],
 			messages: [

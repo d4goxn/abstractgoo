@@ -30,6 +30,11 @@ html
 		block scripts
 		script
 			$('.inactive').each(function() {
-				console.log($(this));
 				$(this).attr('title', 'does not exist');
+			});
+		script
+			$('.imagebar').parent().hover(function() {
+				$(this).children('.imagebar').stop().fadeIn('fast');
+			}, function() {
+				$(this).children('.imagebar').stop().fadeOut('fast');
 			});
