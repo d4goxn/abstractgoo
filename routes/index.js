@@ -22,6 +22,15 @@ exports.index = function(req, res){
 					},
 					content: md('An image gallery laid out using the [isotope](http://isotope.metafizzy.co/) plugin. This was an assignment for the [web dev program](http://discoverycommunitycollege.com/web-development/) at Discovery Community College.')
 				},
+
+				{
+					title: 'TMePlz',
+					image: {
+						src: 'images/posts/tmeplz/login.png',
+						title: 'TMePlz login page'
+					},
+					content: md('TMePlz is a fictional tshirt company. I got to do a really cool retro / psychadelic isometric design, as a Wordpress theme. The focus of the project, aside from graphic design, was the S2 Member plugin for handling user logins. I don\'t think we used any functionality that wasn\'t already available in the WP API. Of all the sites I have designed, this one is definitely my favorite graphic design. I hope I get to use it for a real project.')
+				}
 			],
 			messages: [
 				{
