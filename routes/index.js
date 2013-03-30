@@ -30,7 +30,18 @@ exports.index = function(req, res){
 						title: 'TMePlz login page'
 					},
 					content: md('TMePlz is a fictional tshirt company. I got to do a really cool retro / psychadelic isometric design, as a Wordpress theme. The focus of the project, aside from graphic design, was the S2 Member plugin for handling user logins. I don\'t think we used any functionality that wasn\'t already available in the WP API. Of all the sites I have designed, this one is definitely my favorite graphic design. I hope I get to use it for a real project.')
+				},
+
+				{
+					title: 'Fullscreen Background Pages',
+					image: {
+						src: 'images/posts/hotlinked-bg-sketch/hotlinked-bg-sketch-small.png',
+						title: 'Hotlinked Fullscreen Background'
+					},
+					excerpt: md('I\'ve always liked fullscreen background pages, but there is one problem: Load speed.'),
+					content: md('I\'ve always liked fullscreen background pages, but there is one problem: Load speed. A nice high res photo could weigh in at a couple MB, which will really slow down a page load. The problem isn\'t usually on the users end however, most of us have 10Mb internet connections at home. Those of us with smartphones only browse on mobile while connected to WiFi, because 4G packets crawl like babies and cost more that their weight in gold.\n The bottleneck is really at the server\'s end of the pipe. Cheap web hosts don\'t usually have good upload bandwidth, and CDNs are expensive, unless your site is actually making good coin. The solution? Hotlinking. [Imgur](http://imgur.com) lets us do it free and simple, and from now on, I will be taking full advantage for my own projects. For a client that wants long term guarantees about uptime and simplicity, they should probably just pay for S3 or something like it.')
 				}
+
 			],
 			messages: [
 				{
