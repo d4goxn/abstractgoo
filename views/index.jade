@@ -51,7 +51,7 @@ block content
 										img(src=post.image.src, alt=post.image.title, title=post.image.title)
 										h3.title
 											a(href='/posts/#{post.name}')!= post.title
-									| !{post.content}
+									| !{post.excerpt || post.content}
 				section(role='complementary')#secondary-content.span3
 					// needed to keep top position consistent with section[role=main]
 					.row-fluid
