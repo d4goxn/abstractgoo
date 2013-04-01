@@ -18,10 +18,10 @@ html
 			.container-fluid
 				.row-fluid(role='navigation')
 					a(href='/', class='span4 #{page.path == "/"? "active": ""}'): h1 <em>abstract</em><strong>GOO</strong>
-					a(href='/service', class='inactive span2 #{page.path == "/service"? "active": ""}') what I do
-					a(href='/policy', class='inactive span2 #{page.path == "/policy"? "active": ""}') how I roll
-					a(href='/blog', class='inactive span2 #{page.path == "/blog"? "active": ""}') what's up
-					a(href='/about', class='inactive span2 #{page.path == "/about"? "active": ""}') who I am
+					a(href='/page/what-i-do', class='span2 #{page.path == "what-i-do"? "active": ""}') what I do
+					a(href='/page/how-i-roll', class='span2 #{page.path == "how-i-roll"? "active": ""}') how I roll
+					a(href='/page/whats-up', class='span2 #{page.path == "whats-up"? "active": ""}') what's up
+					a(href='/page/who-i-am', class='span2 #{page.path == "who-i-am"? "active": ""}') who I am
 
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')

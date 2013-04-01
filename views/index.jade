@@ -57,7 +57,7 @@ block content
 					.row-fluid
 						// messages
 						for message in page.messages
-							article(id = 'message-#{message.title.replace(/\s/g, '-').toLowerCase()}')
+							article(id = 'message-#{message.title.replace(/\s/g, '-').toLowerCase()}').message
 								.article-wrapper
 									h3!= message.title
 									div(role='content')!= message.content
