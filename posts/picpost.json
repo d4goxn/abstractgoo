@@ -1,0 +1,10 @@
+{
+	"name": "picpost",
+	"title": "picpost",
+	"image": {
+		"src": "images/posts/picpost/gallery-small.png",
+		"bannerSrc": "images/header/picpost-gallery.png",
+		"title": "picpost gallery page"
+	},
+	"content": "An image gallery laid out using the [isotope](http://isotope.metafizzy.co/) plugin. This was an assignment for the [web dev program](http://discoverycommunitycollege.com/web-development/) at Discovery Community College."
+}

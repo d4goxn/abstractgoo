@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	header#site-header
+		.container-fluid
+			.row-fluid
+				if header_image
+					#splash.imageblock
+						img(src=image.bannerSrc, alt=image.title, title=image.title)
+						h2.title= title
+				else
+					h2.title= title
+			.row-fluid
+				article!= content
