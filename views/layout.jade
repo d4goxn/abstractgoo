@@ -18,10 +18,10 @@ html
 			.container-fluid
 				.row-fluid(role='navigation')
 					a(href='/', class='span4 #{page.path == "/"? "active": ""}'): h1 <em>abstract</em><strong>GOO</strong>
-					a(href='/page/what-i-do', class='span2 #{page.path == "what-i-do"? "active": ""}') what I do
-					a(href='/page/how-i-roll', class='span2 #{page.path == "how-i-roll"? "active": ""}') how I roll
-					a(href='/page/whats-up', class='span2 #{page.path == "whats-up"? "active": ""}') what's up
-					a(href='/page/who-i-am', class='span2 #{page.path == "who-i-am"? "active": ""}') who I am
+					a(href='/what-i-do', class='span2 #{page.path == "what-i-do"? "active": ""}') what I do
+					a(href='/how-i-roll', class='span2 #{page.path == "how-i-roll"? "active": ""}') how I roll
+					a(href='/whats-up', class='span2 #{page.path == "whats-up"? "active": ""}') what's up
+					a(href='/who-i-am', class='span2 #{page.path == "who-i-am"? "active": ""}') who I am
 
 		block content
 		script(src='http://code.jquery.com/jquery-1.9.1.min.js')
@@ -39,7 +39,6 @@ html
 				$(this).children('.imagebar').stop().fadeOut('fast');
 			});
 		script
-
 			var _gaq = _gaq || [];
 			_gaq.push(['_setAccount', 'UA-39786809-1']);
 			_gaq.push(['_trackPageview']);

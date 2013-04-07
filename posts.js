@@ -8,8 +8,6 @@ function parsePostFiles(filenames) {
 
 	// Ignore subdirectories.
 	filenames.filter(function(filename) {
-		console.log(process.cwd());
-		console.log(fs.realpathSync(filename));
 		return !fs.statSync(filename).isDirectory();
 	});
 

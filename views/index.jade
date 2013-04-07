@@ -18,9 +18,6 @@ block content
 							img(src='images/header/new-system-screenshot.png')
 							.carousel-caption: p Following a tutorial on my new comp. Wheee!
 						.item
-							img(src='images/header/hotlinked-bg-sketch.png')
-							.carousel-caption: p Fullscreen background page. The image was hotlinked from <a href="http://imgur.com">imgur</a> to improve loading speed.
-						.item
 							img(src='images/header/making-a-colorscheme.png')
 							.carousel-caption: p Designing a colorscheme with the help of colorschemedesigner.com.
 						.item
@@ -50,7 +47,7 @@ block content
 									.imageblock
 										img(src=post.image.src, alt=post.image.title, title=post.image.title)
 										h3.title
-											a(href='/posts/#{post.name}')!= post.title
+											a(href='/#{post.name}')!= post.title
 									| !{post.excerpt || post.content}
 				section(role='complementary')#secondary-content.span3
 					// needed to keep top position consistent with section[role=main]
