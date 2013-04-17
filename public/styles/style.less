@@ -13,6 +13,19 @@
 	}
 }
 
+html.wf-loading body {
+	opacity: 0;
+}
+
+html.wf-active, html.wf-inactive {
+	body {
+		-webkit-transition: opacity 1s ease-out;
+		-moz-transition: opacity 1s ease-out;
+		-o-transition: opacity 1s ease-out;
+		transition: opacity 1s ease-out;
+	}
+}
+
 body {
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	@bgcolor: #2e809c;
