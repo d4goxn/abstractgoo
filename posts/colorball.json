@@ -1,0 +1,10 @@
+{
+	"name": "colorball",
+	"title": "Colorball",
+	"image": {
+		"src": "images/posts/colorball/colorball.png",
+		"bannerSrc": "images/header/colorball.png",
+		"title": "Color in 3D"
+	},
+	"content": "One ball, all color! Legend tells of a grey goey center, if only it could be cut open. Seriously though, the point of this is to make a better color scheme picker. Color has three parameters, so it should be presented in a 3D space."
+}
