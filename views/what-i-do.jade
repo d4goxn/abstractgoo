@@ -1,0 +1,40 @@
+
+extends layout
+
+block content
+	header#site-header.container-fluid
+		.row-fluid
+			#splash.span12
+				img(src='/images/header/local-development-workflow.png')
+
+	section(role='main')#middle.container-fluid
+		header.row-fluid
+			.span12
+				.article-wrapper
+					h2.pull-left <strong>Interactive Media and Software Development</strong>, on the Web, on Linux, and in Embedded Systems.
+					em.pull-right ... and on your platform too, given the opportunity to learn it!
+
+		.row-fluid
+			article.span4
+				.article-wrapper
+					h3.pull-left Sharing<br> Information
+					p is the purpose of the web. Education, entertainment, sales and personal expression - it is all just information and content to a web developer. But to connect it all into a grand pattern, many systems need to work together.
+					p The info needs a home, and an address to locate it. The address has to be meaningful to the intended audience - simple or short names for humans, and unique identifiers for other agents.
+					p The information must be formatted in a way that is easily read and understood not only by people, but also by the systems that parse it - search engines, browsers of all kinds, payment and inventory systems, scripts and affiliates, and screen readers.
+
+			article.span4
+				.article-wrapper
+					h3.pull-left Platforms and<br> Frameworks<br> <em>on the Web</em>
+					p The wonderful thing about software development is that there are so many tools to playwith, and so many fields and sandboxes to play in.
+					p <strong>NodeJS</strong> is just too cool for school. For bringing the awesome NPM packaging system together with a consistent interface to the underlying operating system, serving it up on the web with the Express framwork, and binding it all together with asynchronous Javascript, Node has become my favorite server side platform.
+					p <strong>Wordpress</strong> has a massive community of helpful outgoing people - something all the money and engineering in the world can't guarantee. With it's comprehensive and beautiful administration pages, and it's deep themability, Wordpress is a gift fit for a king who doesn't write code. My CMS of choice for client projects.
+
+			article.span4
+				.article-wrapper
+					h3.pull-left The Holy Trinity:<br> <em>HTML5, CSS3<br> and Javascript.</em>
+					p These are the threads that make up the fabric of the internet. 
+					p <strong>HTML</strong> defines the structure of the content, how it fits into an overal hierarchy (the Document Object Model) and how it all connects together across the document and across the internet.
+					p <strong>CSS</strong> specifies the look and feel of the document, including visual effects and animations.
+					p <strong>Javascript</strong> determines how things work - what happens when in response to a user's actions.
+
+block scripts
