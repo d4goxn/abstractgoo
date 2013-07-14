@@ -1,0 +1,75 @@
+
+extends layout
+
+block style
+
+block content
+	section(roll='main')#scrolled-container
+		article#project-lifecycle-intro.size3
+			h2 Project Lifecycle
+			p Development projects are broken down into phases, with each phase split up into one day tasks. At the end of each phase I will make sure that you are satisfied with the direction the project taking, and I will bill for a fraction of the total payment.
+			p Before the project starts, I will need a $50 down payment to make sure that you are commited to the project, and to make sure that you are capable of paying money. Believe it or not, some people aren't. If you are concerned about my own commitment or abilities, you should see my student loan or my portfolio.
+			p Good communication is critical. I will give a short status report at the end of each workday, and check up on any feedback at the beginning of the day. If we need to talk in real time, I recommend video chat on Google or Skype. Text messages are a good way to get my attention at any time of day. Of course, I take calls, but please keep in mind that when I am rocking in the zone making, a sudden call can be a little disruptive.
+			p Check out the flow of a typical <a href="#web-project-phases">web development project.</a>
+			//p <a href="#app-development-phases">Application development</a> follows a similar pattern, but there are enough differences to warrant a seperate description.
+
+		article#web-project-phases.size1
+			h3 The Major Phases
+			ol
+				li: a(href="#web-discovery-phase")Discovery
+				li: a(href="#web-mockup-phase") Mockup
+				li: a(href="#web-artwork-phase") Artwork
+				li: a(href="#web-coding-and-Testing-phase") Coding and Testing
+				li: a(href="#web-refinement-phase") Refinement
+				li: a(href="#web-launch-phase") Launch
+
+		article#web-discovery-phase.size3
+			h3 Discovery
+			p This is where we develop your vision into a detailed plan with a specific scope and timeline.
+			p What exactly is the purpose of the site? Typical examples include:
+			ul
+				li A single page advertisement.
+				li An event page with registration funtionality.
+				li A personal or business portfolio, where you or your team will be adding new items indefinately.
+				li A forum or public gallery, with tools for moderation, and the ability to delegate some management to specific users. You expect to have a lot of user generated content and a lot of user accounts to manage.
+				li An online store that can process transactions and track orders.
+				li Some combination of the above, integrated into a single, consistent network.
+			p Is there specific functionality that you want? Integration with a social network or content hosting site, like Twitter, Flickr or Youtube? A wizard to guide users through a process, like planning an event and sending invites? Geographical context for prioritizing content based on distance, like a listing of nearby distributors?
+			p How do you picture the look and feel? Examples really help here. If you don't provide them, I will, to make sure that we really understand each other.
+			p Next up: <a href="#web-mockup-phase">Mockup</a>.
+
+		article#web-mockup-phase.size2
+			h3 Mockup
+			p Now it's time for me to draw up a map of the site as a whole, draw wireframes of page layouts, and diagrams or flowcharts showing how the site will function. This is a great time for you to question everything and be really critical. Mockups are quick, easy, and I really enjoy making them. If you feel like making a back of the napkin sketch, I would be glad to clean it up and fill in the specifics, and then present it back to you.
+			p When you are no longer able to find flaws with the plan, then we move on to <a href="#web-artwork-phase">artwork</a>.
+
+		article#web-artwork-phase.size3
+			h3 Artwork
+			p Clean, smooth and professional? Warm and artistic in a professional way? Psychadelic, but easy to navigate and not painful to look at? Awesome full screen photography with content that fits around the focus?
+			p I have always had decent art skills, and I have studied graphic design in school. Having said that, I know graphic artists who are much better than me, so if you want something really creative, something worthy of a canvas, I can recommend a colleague. Also, <a href="deviantart.com">Deviant Art</a> is a great place to look for great artists. I can subcontract an artist, or you can make a private arrangement yourself. If you are an artist yourself, and you would like to draw / paint / photograph a fullscreen background image, that's great!
+			p Artwork is an area where I can be really flexible with the budget. If you provide all of the art in a useable form, then I won't charge you a thing for this phase. If you have found some existing works that should be integrated into the design, then we will have to aquire permission from it's creator, but then it should only take a few hours of editing on my part. Or, if you need this to be the most badass, breathtaking site ever, with a big name behind it, we could even try to hire a celebrity artist or photographer.
+			p If you don't really care about Art with a big "A", you just want a clean layout and good color scheme, then I'm your man. I'll put together some samples, show you where to look for existing palettes and patterns, and we can keep this phase short and simple.
+			p Now I'll make it dance. It's <a href="#web-coding-and-testing-phase">code</a> time!
+
+		article#web-coding-and-testing-phase.size3
+			h3 Implementation and Testing
+			p This is where it really gets interesting, for me anyway. I've been programming since grade 7, and it never gets old. In fact, it would be hard to keep up with the state of the art (yes <a href="http://www.paulgraham.com/knuth.html">art, not science</a>) for anyone who didn't love it enough to do it for fun. But I digress.
+			p A single page site with no dynamic content can be marked up in less than half a day.
+			p For a site of any complexity, I like to use an existing open source framework like <a href="http://expressjs.com/">ExpressJS</a> or <a href="http://symfony.com/">Symfony</a>. If you need a full featured administration interface that has a proven track record with thousands of users, then a content management system would be more appropriate. I usually recommend <a href="http://wordpress.org/">Wordpress</a> because it's admin section has a near perfect balance of usability, polish and control. It can be simplified or restricted with user roles, and it can be extended with plugins.
+			p Ideally, inner workings of the site isn't something that you will even have to think about. It should just work, and you should be able to understand how to use it just by looking at it. In practice, you will need to keep track of a password and play around with the controls a little to get comfortable with it.
+			p When everything works properly and the automated tests pass themselves, it's time to <a href="#web-launch-phase">go live</a>.
+
+		article#web-launch-phase
+			h3 Launch Time!
+
+
+block scripts
+	script(src='/scripts/jquery.scrollTo.min.js')
+	script(src='/scripts/jquery.localScroll.min.js')
+	script
+		$.localScroll({
+			axis: 'xy',
+			queue: true,
+			hash: true
+		});
+

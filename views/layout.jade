@@ -2,6 +2,7 @@ doctype 5
 html
 	head
 		title= (page.title? page.title + ' - ': '') + site.title
+		script(src="modernizr.custom.09082.js")
 		script
 			WebFontConfig = {
 			google: { families: [ 'Open+Sans:400,300,800,600:latin' ] }
@@ -19,6 +20,8 @@ html
 		link(rel='stylesheet', href='/bootstrap/styles/responsive.css')
 		link(rel='stylesheet', href='/styles/structure.css')
 		link(rel='stylesheet', href='/styles/style.css')
+
+		block style
 	body
 		//if lt IE 9
 			p.chromeframe.

@@ -3,7 +3,7 @@
 var md = require('node-markdown').Markdown;
 var prioritizedKeysSorter = require('../prioritizedKeysSorter').sorter;
 
-var posts = require('../posts').allSync()
+var posts = require('../posts').allSync();
 
 // Sort posts based on prioritized, optional keys.
 posts.sort(prioritizedKeysSorter(['order', 'date']));
