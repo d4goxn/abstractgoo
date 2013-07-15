@@ -15,7 +15,5 @@ block content
 					h3: a(href='github.com/d4goxn') GitHub
 						for event in page.githubEvents
 							article
-								span.type= event.type
-								span.subject= event.subject
-								for message in event.messages
-									p.message= event.message
+								h4= event.title
+								.message!= event.message

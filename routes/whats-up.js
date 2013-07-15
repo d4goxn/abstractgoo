@@ -2,49 +2,35 @@
 
 'use strict';
 
-var http = require('http');
 var async = require('async');
+var request = require('request');
+var FeedParser = require('feedparser');
 
 var locals = {
 	githubEvents: []
 };
 
 function processGithubEvents(finish) {
-	var options = {
-		hostname: 'api.github.com',
-		path: '/users/d4goxn/events/public',
+	request({
+		url: 'http://github.com/d4goxn.atom',
 		headers: {
-			'accept': 'application/json'
+			'Accept': 'application/atom+xml'
 		}
-	};
-
-	var body = '';
-
-	http.get(options, function(response) {
-		response.on('data', function(chunk) {
-			body += chunk;
-		});
-
-		response.on('end', function() {
-			console.log(response.headers['x-ratelimit-remaining']);
-			JSON.parse(body).forEach(function(event) {
-				var messages = [];
-
-				if(event.payload.commits) {
-					event.payload.commits.forEach(function(commit) {
-						messages.push(commit.message);
-					});
-				}
-
-				locals.githubEvents.push({
-					type: event.type,
-					subject: event.repo.name.split('/').pop(),
-					messages: messages
-				});
+	})
+	.pipe(new FeedParser())
+	.on('readable', function() {
+		var stream = this, readable;
+		
+		while(readable = stream.read()) {
+			console.log(readable);
+			locals.githubEvents.push({
+				title: readable.title,
+				message: readable.description
 			});
-
-			finish(locals);
-		});
+		}
+	})
+	.on('end', function() {
+		finish();
 	});
 }
 
