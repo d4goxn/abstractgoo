@@ -1,0 +1,21 @@
+
+extends layout
+
+block content
+	section(roll='main')#middle.container-fluid
+		.row-fluid
+			header.span12
+				.article-wrapper
+					h2 A Stream of State
+					p Intersecting feeds from around my webs.
+
+		.row-fluid
+			.span4
+				.article-wrapper
+					h3: a(href='github.com/d4goxn') GitHub
+						for event in page.githubEvents
+							article
+								span.type= event.type
+								span.subject= event.subject
+								for message in event.messages
+									p.message= event.message
