@@ -12,6 +12,7 @@
     "node-markdown": "0.1.1",
     "async": "~0.2.9",
     "request": "~2.22.0",
-    "feedparser": "~0.16.1"
+    "feedparser": "~0.16.1",
+    "twit": "~1.1.8"
   }
 }

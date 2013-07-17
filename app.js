@@ -7,7 +7,6 @@
 
 var express = require('express'),
 	routes = require('./routes'),
-	whatsUpRoute = require('./routes/whats-up.js'),
 	pageRoute = require('./routes/page').page,
 	http = require('http'),
 	path = require('path');
@@ -31,7 +30,6 @@ app.configure('development', function(){
 	app.use(express.errorHandler());
 });
 
-app.get('/whats-up', whatsUpRoute.show);
 app.get('/:page', pageRoute);
 app.get('/', routes.index);
 

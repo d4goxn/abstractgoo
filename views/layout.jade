@@ -32,9 +32,8 @@ html
 			.container-fluid
 				.row-fluid(role='navigation')
 					a(href='/', class='span4 #{page.path == "/"? "active": ""}'): h1 <em>abstract</em><strong>GOO</strong>
-					a(href='/what-i-do', class='span2 #{page.path == "what-i-do"? "active": ""}') what I do
+					a(href='/what-i-do', class='offset2 span2 #{page.path == "what-i-do"? "active": ""}') what I do
 					a(href='/how-i-roll', class='span2 #{page.path == "how-i-roll"? "active": ""}') how I roll
-					a(href='/whats-up', class='span2 #{page.path == "whats-up"? "active": ""}') what's up
 					a(href='/who-i-am', class='span2 #{page.path == "who-i-am"? "active": ""}') who I am
 
 		block content
@@ -57,7 +56,6 @@ html
 								li <strong>Twitter</strong> 
 									a(href='//twitter.com/ross9885') @ross9885.
 									|  I may actually use it, someday
-								li <strong>Facebook</strong>: Maybe if it paid me $10<sup>[4 to 6]</sup>. <a href='https://soundcloud.com/musicdotexe/dotexe-terminated'>Kill it with fire</a>!
 					.span4
 						.article-wrapper
 							h2 walk my webs
