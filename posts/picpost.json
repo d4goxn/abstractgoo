@@ -1,6 +1,7 @@
 {
 	"name": "picpost",
 	"title": "picpost",
+	"url": "epicpost.aws.af.cm",
 	"image": {
 		"src": "images/posts/picpost/gallery-small.png",
 		"bannerSrc": "images/header/picpost-gallery.png",

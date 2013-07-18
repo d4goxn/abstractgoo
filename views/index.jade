@@ -49,9 +49,12 @@ block content
 								.article-wrapper
 									.imageblock
 										img(src=post.image.src, alt=post.image.title, title=post.image.title)
-										h3.title
-											a(href='/#{post.name}')!= post.title
-									| !{post.excerpt || post.content}
+										if post.url
+											h3.title
+												a(href='/#{post.url}')!= post.title
+										else
+											h3.title!= post.title
+									!{post.excerpt || post.content}
 				section(role='complementary')#secondary-content.span3
 					// needed to keep top position consistent with section[role=main]
 					.row-fluid
