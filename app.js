@@ -11,10 +11,46 @@ var express = require('express'),
 	http = require('http'),
 	path = require('path');
 
+function generateMongoUrl(config) {
+	config.hostname = (config.hostname || 'localhost');
+	config.port = (config.port || 27017);
+	config.db = (config.db || 'abstractgoo');
+}
+
+if(config.username && config.password)
+	return 'mongodb://'
+		+ config.username + ':'
+		+ config.password + '@'
+		+ config.host + ':'
+		+ config.port + '/'
+		+ config.db;
+else
+	return 'mongodb://'
+		+ config.hostname + ':'
+		+ config.port + '/'
+		+ config.db;
+
+if(process.env.VCAP_SERVICES) {
+	var env = process.env.VCAP_SERVICES;
+	var mongo = env['mongodb-1.8'][0]['credentials'];
+} else {
+	var mongo = {
+		hostname: "localhost",
+		port: 27017,
+		username: "",
+		password: "",
+		name: "",
+		db: "abstractgoo"
+	}
+}
+
+var mongourl = generateMongoUrl(mongo);
+
 var app = express();
 
 app.configure(function(){
 	app.set('port', process.env.PORT || 3000);
+	app.set('host', process.env.host || 'localhost');
 	app.set('views', __dirname + '/views');
 	app.set('view engine', 'jade');
 	app.use(express.favicon());
