@@ -2,7 +2,6 @@ doctype 5
 html
 	head
 		title= (page.title? page.title + ' - ': '') + site.title
-		script(src='/scripts/modernizr.custom.09082.js')
 		script
 			WebFontConfig = {
 			google: { families: [ 'Open+Sans:400,300,800,600:latin' ] }
@@ -16,6 +15,7 @@ html
 			var s = document.getElementsByTagName('script')[0];
 			s.parentNode.insertBefore(wf, s);
 			})();
+		script(src='/scripts/modernizr.custom.09082.js')
 		link(rel='stylesheet', href='/bootstrap/styles/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/styles/responsive.css')
 		link(rel='stylesheet', href='/styles/structure.css')
