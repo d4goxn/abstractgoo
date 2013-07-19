@@ -18,7 +18,4 @@
 	"strict": true,
 	"trailing": true,
 	"smarttabs": true,
-	"boss": true,
-	"globals": {
-	}
 }
