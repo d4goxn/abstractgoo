@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	#middle
+		.container-fluid
+			.row-fluid
+				.span12
+					h2.article-wrapper!= message.title
+			form(action = '/message/' + message.name || '', method = 'post')
+				input(type = 'hidden', name = '_method', value = 'put')
+				.row-fluid
+					.span6
+						.article-wrapper
+							label Title
+							input#title(name = 'title', value = message.title)
+					.span6
+						.article-wrapper
+							label Content
+							textarea#content(name = 'content', value = message.content)
+				.row-fluid
+					.span12
+						button Post
