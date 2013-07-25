@@ -9,6 +9,7 @@ var express = require('express'),
 	index = require('./routes/index'),
 	pageRoute = require('./routes/page').page,
 	message = require('./routes/message'),
+	resume = require('./routes/resume'),
 	expressValidator = require('express-validator'),
 	http = require('http'),
 	path = require('path'),
@@ -51,6 +52,7 @@ if(app.get('env') == 'development') {
 	app.put('/message/:name', message.update);
 }
 
+app.get('/resume', resume.show);
 app.get('/:page', pageRoute);
 app.get('/', index.show);
 
