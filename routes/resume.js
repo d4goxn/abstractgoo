@@ -8,7 +8,7 @@ exports.show = function(request, response) {
 		} else {
 			console.log(data);
 			response.render('resume', {
-				path: '/resume',
+				path: 'resume',
 				content: data
 			});
 		}
